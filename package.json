@@ -1,0 +1,12 @@
+{
+  "name": "传讯聊天应用",
+  "version": "1.0.0",
+  "description": "一个现代化的在线聊天应用",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8080"
+  },
+  "keywords": ["chat", "messaging", "web-app"],
+  "author": "",
+  "license": "MIT"
+}
