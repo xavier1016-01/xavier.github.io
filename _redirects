@@ -1,0 +1,8 @@
+# SPA路由支持 - 所有请求重定向到index.html
+/*    /index.html   200
+
+# 特定路由（如果需要）
+/api/*  /.netlify/functions/:splat  200
+
+# 旧版本迁移（如果需要）
+/old-app/*  /index.html   200

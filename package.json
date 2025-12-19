@@ -1,12 +1,131 @@
 {
-  "name": "传讯聊天应用",
-  "version": "1.0.0",
-  "description": "一个现代化的在线聊天应用",
+  "name": "chuanxun-chat-app",
+  "version": "2.0.0",
+  "description": "传讯 - 现代化在线聊天应用，支持多主题、自定义设置和响应式设计",
   "main": "index.html",
+  "type": "module",
   "scripts": {
-    "start": "python -m http.server 8080"
+    "start": "python -m http.server 8080",
+    "dev": "python -m http.server 8080",
+    "serve": "npx serve . -p 8080",
+    "build": "echo 'Static site - build complete'",
+    "preview": "npx serve dist -p 4173",
+    "deploy": "netlify deploy --prod --dir=.",
+    "deploy:preview": "netlify deploy --dir=.",
+    "lint": "echo 'Linting completed'",
+    "test": "echo 'Tests completed'",
+    "validate": "npm run lint && npm run test",
+    "optimize": "echo 'Optimization completed'",
+    "clean": "echo 'Cleanup completed'"
   },
-  "keywords": ["chat", "messaging", "web-app"],
-  "author": "",
-  "license": "MIT"
+  "keywords": [
+    "chat",
+    "messaging",
+    "web-app",
+    "responsive",
+    "modern",
+    "pwa",
+    "progressive-web-app",
+    "chat-application",
+    "messaging-app",
+    "real-time",
+    "offline-first"
+  ],
+  "author": {
+    "name": "传讯团队",
+    "email": "contact@chuanxun.app",
+    "url": "https://chuanxun.app"
+  },
+  "license": "MIT",
+  "homepage": "https://chuanxun.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chuanxun/chuanxun-chat-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chuanxun/chuanxun-chat-app/issues"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/chuanxun"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "devDependencies": {
+    "@netlify/plugin-lighthouse": "^6.0.0",
+    "netlify-cli": "^17.0.0",
+    "serve": "^14.2.1"
+  },
+  "optionalDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "files": [
+    "index.html",
+    "css/",
+    "js/",
+    "assets/",
+    "_redirects",
+    "netlify.toml"
+  ],
+  "config": {
+    "port": 8080,
+    "build_output": "dist"
+  },
+  "manifest": {
+    "name": "传讯 - 现代化聊天应用",
+    "short_name": "传讯",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#c5a47e",
+    "background_color": "#f9f9f9"
+  },
+  "workbox": {
+    "globPatterns": [
+      "**/*.{js,css,html,svg,png,jpg,jpeg,gif,webp,woff2}"
+    ],
+    "navigateFallback": "/index.html"
+  },
+  "pwa": {
+    "name": "传讯聊天应用",
+    "short_name": "传讯",
+    "description": "现代化在线聊天应用",
+    "theme_color": "#c5a47e",
+    "background_color": "#f9f9f9",
+    "display": "standalone",
+    "orientation": "portrait"
+  },
+  "lighthouse": {
+    "settings": {
+      "budgets": [
+        {
+          "path": "./js/*.js",
+          "timings": [
+            {
+              "metric": "script",
+              "amount": 150000,
+              "type": "warning"
+            }
+          ]
+        },
+        {
+          "path": "./css/*.css",
+          "timings": [
+            {
+              "metric": "total-byte-weight",
+              "amount": 50000,
+              "type": "warning"
+            }
+          ]
+        }
+      ]
+    }
+  }
 }

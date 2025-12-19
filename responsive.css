@@ -1,0 +1,369 @@
+/* 传讯聊天应用 - 响应式设计 */
+
+/* 大屏幕设备 (1200px+) */
+@media screen and (min-width: 1200px) {
+    .main-app {
+        max-width: 1200px;
+        margin: 0 auto;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .message-content {
+        max-width: 60%;
+    }
+
+    .settings-panel,
+    .menu-panel {
+        width: 400px;
+    }
+}
+
+/* 平板设备 (768px - 1199px) */
+@media screen and (max-width: 1199px) {
+    .message-content {
+        max-width: 75%;
+    }
+
+    .app-header {
+        padding: var(--spacing-sm) var(--spacing-lg);
+    }
+
+    .input-container {
+        padding: var(--spacing-lg);
+    }
+}
+
+/* 小平板设备 (576px - 767px) */
+@media screen and (max-width: 767px) {
+    .mobile-only {
+        display: block;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .app-header {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .partner-info .partner-details {
+        display: none;
+    }
+
+    .message-content {
+        max-width: 80%;
+    }
+
+    .settings-panel,
+    .menu-panel {
+        width: 100%;
+        right: -100%;
+    }
+
+    .welcome-content {
+        padding: var(--spacing-lg);
+    }
+
+    .notification {
+        right: var(--spacing-md);
+        left: var(--spacing-md);
+        max-width: none;
+    }
+}
+
+/* 手机设备 (480px - 575px) */
+@media screen and (max-width: 575px) {
+    :root {
+        --font-size: 14px;
+        --spacing-sm: 6px;
+        --spacing-md: 12px;
+        --spacing-lg: 18px;
+        --spacing-xl: 24px;
+    }
+
+    .app-header {
+        min-height: 56px;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .header-left,
+    .header-right {
+        gap: var(--spacing-xs);
+    }
+
+    .nav-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .partner-avatar,
+    .user-avatar {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .chat-messages {
+        padding: var(--spacing-sm);
+    }
+
+    .message {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .message-content {
+        max-width: 85%;
+        min-width: 60px;
+    }
+
+    .message-bubble {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+
+    .input-container {
+        padding: var(--spacing-sm);
+    }
+
+    .toolbar-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+
+    .message-input {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.9rem;
+        min-height: 40px;
+    }
+
+    .send-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    .settings-panel,
+    .menu-panel {
+        width: 100%;
+    }
+
+    .settings-header,
+    .menu-header {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .settings-content {
+        padding: var(--spacing-md);
+    }
+
+    .welcome-logo i {
+        font-size: 3rem;
+    }
+
+    .welcome-logo h1 {
+        font-size: 2rem;
+    }
+
+    .welcome-content {
+        padding: var(--spacing-md);
+    }
+}
+
+/* 超小屏幕设备 (最大479px) */
+@media screen and (max-width: 479px) {
+    :root {
+        --font-size: 13px;
+        --radius: 12px;
+    }
+
+    .app-title {
+        font-size: 1.1rem;
+    }
+
+    .partner-name {
+        font-size: 0.8rem;
+    }
+
+    .partner-status {
+        font-size: 0.7rem;
+    }
+
+    .message-content {
+        max-width: 88%;
+    }
+
+    .message-bubble {
+        padding: 8px var(--spacing-sm);
+        font-size: 0.85rem;
+    }
+
+    .message-time {
+        font-size: 0.7rem;
+    }
+
+    .welcome-logo i {
+        font-size: 2.5rem;
+    }
+
+    .welcome-logo h1 {
+        font-size: 1.8rem;
+    }
+
+    .welcome-logo p {
+        font-size: 0.9rem;
+    }
+}
+
+/* 横屏模式适配 */
+@media screen and (orientation: landscape) and (max-height: 600px) {
+    .app-header {
+        min-height: 50px;
+    }
+
+    .welcome-content {
+        padding: var(--spacing-md);
+    }
+
+    .welcome-logo i {
+        font-size: 2rem;
+    }
+
+    .welcome-logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .welcome-logo p {
+        font-size: 0.8rem;
+    }
+
+    .input-container {
+        padding: var(--spacing-sm);
+    }
+
+    .message-input {
+        max-height: 60px;
+    }
+}
+
+/* 高分辨率屏幕优化 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .welcome-logo i,
+    .partner-avatar,
+    .user-avatar {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .app-header,
+    .input-container,
+    .nav-btn,
+    .toolbar-btn,
+    .settings-panel,
+    .menu-panel,
+    .welcome-page {
+        display: none !important;
+    }
+
+    .chat-messages {
+        padding: 0;
+    }
+
+    .message {
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .message-content {
+        max-width: 100%;
+    }
+
+    .message-bubble {
+        border: 1px solid #ddd;
+        background: white !important;
+        color: black !important;
+    }
+
+    body {
+        position: static;
+        height: auto;
+        overflow: visible;
+    }
+
+    .main-app {
+        height: auto;
+        max-width: none;
+        box-shadow: none;
+    }
+}
+
+/* 可访问性增强 */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* 深色模式偏好 */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --primary-bg: #121212;
+        --secondary-bg: #1e1e1e;
+        --text-primary: #ffffff;
+        --text-secondary: #b0b0b0;
+        --border-color: #333333;
+        --message-received-bg: #2a2a2a;
+        --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        --primary-bg-rgb: 18, 18, 18;
+        --secondary-bg-rgb: 30, 30, 30;
+    }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+    .nav-btn:hover,
+    .toolbar-btn:hover,
+    .send-btn:hover,
+    .menu-item:hover,
+    .close-btn:hover {
+        background: transparent;
+    }
+
+    .nav-btn:active,
+    .toolbar-btn:active,
+    .send-btn:active {
+        transform: scale(0.95);
+    }
+
+    .message:active .message-favorite {
+        opacity: 1;
+    }
+}
+
+/* 焦点可见性增强 */
+@media (prefers-reduced-motion: no-preference) {
+    button:focus-visible,
+    .menu-item:focus-visible,
+    .message-bubble:focus-visible {
+        outline: 2px solid var(--accent-color, #c5a47e);
+        outline-offset: 2px;
+    }
+}
+
+/* 键盘导航支持 */
+@media (navigation-mode: keyboard) {
+    .menu-item:focus {
+        background: var(--primary-bg);
+    }
+
+    .nav-btn:focus,
+    .toolbar-btn:focus {
+        box-shadow: 0 0 0 2px var(--accent-color, #c5a47e);
+    }
+}
